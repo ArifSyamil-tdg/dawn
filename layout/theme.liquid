@@ -299,6 +299,14 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    <!-- Add content from tutorial.liquid inside SNIPPETS folder only -->
+    {% comment %} {% render 'tutorial' %} {% endcomment %}
+    {%
+      render 'my-snippet', {
+      word : 'hello',
+      second_word : 'word2'
+      }
+    %}
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
